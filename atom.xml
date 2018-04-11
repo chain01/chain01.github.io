@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>创之</title>
+  
+  <subtitle>用心创造快乐</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://chainchunqing.xyz/"/>
+  <updated>2018-04-11T12:39:41.320Z</updated>
+  <id>http://chainchunqing.xyz/</id>
+  
+  <author>
+    <name>如果能编程回忆</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Markdown用法</title>
+    <link href="http://chainchunqing.xyz/2018/04/11/test/"/>
+    <id>http://chainchunqing.xyz/2018/04/11/test/</id>
+    <published>2018-04-11T11:11:51.000Z</published>
+    <updated>2018-04-11T12:39:41.320Z</updated>
+    
+    <content type="html"><![CDATA[<p></p><h3>Markdown用法</h3><br>Hexo 是使用Markdown标记语言的，以前没有接触此处学习并记录。<br><a id="more"></a><p></p><h2 id="什么是Markdown"><a href="#什么是Markdown" class="headerlink" title="什么是Markdown"></a>什么是Markdown</h2><p>Markdown具有一系列衍生版本，用于扩展Markdown的功能（如表格、脚注、内嵌HTML等等），这些功能原初的Markdown尚不具备，它们能让Markdown转换成更多的格式，例如LaTeX，Docbook。Markdown增强版中比较有名的有Markdown Extra、MultiMarkdown、 Maruku等。这些衍生版本要么基于工具，如Pandoc；要么基于网站，如GitHub和Wikipedia，在语法上基本兼容，但在一些语法和渲染效果上有改动。</p><h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><p>标题能显示出文章的结构。行首插入1-6个 # ，每增加一个 # 表示更深入层次的内容，对应到标题的深度由 1-6 阶。#号后面应使用空格与标题分隔<br>H1 :# 一级标题<br>H2 :## 二级标题<br>H3 :### 三级标题<br>H4 :#### 四级标题<br>H5 :##### 五级标题<br>H6 :###### 六级标题</p><h2 id="文本样式"><a href="#文本样式" class="headerlink" title="文本样式"></a>文本样式</h2><p>带星号的文本样式，在原版Markdown标准中不存在，但在其大部分衍生标准中被添加<br>链接 :<a href="https://www.github.com/chain01" target="_blank" rel="noopener">Title</a><br>加粗 :<strong>Bold</strong><br>斜体字 :<em>Italics</em><br>删除线 :<del>text</del><br>高亮 :==text==<br>段落 : 段落之间空一行<br>换行符 : 一行结束时输入两个空格</p><p>列表 :* 添加星号成为一个新的列表项。<br>引用 :</p><blockquote><p>使用说明，要结束引用需要在引用部分结束后插入一个回车</p></blockquote><p>内嵌代码 : <code>alert(&#39;Hello World&#39;);</code><br>画水平线 (HR) :——–<br>列举</p><blockquote><ul><li>整理知识，学习笔记</li><li>发布日记，杂文，所见所想</li><li>撰写发布技术文稿（代码支持）</li><li>撰写发布学术论文（LaTeX 公式支持）</li></ul></blockquote><p>插入图片<br><img src="https://www.zybuluo.com/static/img/logo.png" alt="cmd-markdown-logo"></p><ul><li style="list-style: none"><input type="checkbox"> 不选中的框</li><li style="list-style: none"><input type="checkbox" checked> 选中的框</li></ul><h2 id="书写一个质能守恒公式-LaTeX"><a href="#书写一个质能守恒公式-LaTeX" class="headerlink" title="书写一个质能守恒公式[^LaTeX]"></a>书写一个质能守恒公式[^LaTeX]</h2><p>$E=mc^2$</p><h2 id="代码高亮"><a href="#代码高亮" class="headerlink" title="代码高亮"></a>代码高亮</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@requires_authorization</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SomeClass</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    <span class="comment"># A comment</span></span><br><span class="line">    <span class="keyword">print</span> <span class="string">'hello world'</span></span><br></pre></td></tr></table></figure><h2 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">st=&gt;start: Start</span><br><span class="line">op=&gt;operation: Your Operation</span><br><span class="line">cond=&gt;condition: Yes or No?</span><br><span class="line">e=&gt;end</span><br><span class="line"></span><br><span class="line">st-&gt;op-&gt;cond</span><br><span class="line">cond(yes)-&gt;e</span><br><span class="line">cond(no)-&gt;op</span><br></pre></td></tr></table></figure><h2 id="绘制表格"><a href="#绘制表格" class="headerlink" title="绘制表格"></a>绘制表格</h2><table><thead><tr><th>左对齐</th><th style="text-align:right">右对齐</th><th style="text-align:center">居中</th></tr></thead><tbody><tr><td>计算机</td><td style="text-align:right">$1600</td><td style="text-align:center">5</td></tr><tr><td>手机</td><td style="text-align:right">$12</td><td style="text-align:center">12</td></tr><tr><td>管线</td><td style="text-align:right">$1</td><td style="text-align:center">234</td></tr></tbody></table>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;/p&gt;&lt;h3&gt;Markdown用法&lt;/h3&gt;&lt;br&gt;Hexo 是使用Markdown标记语言的，以前没有接触此处学习并记录。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="学习" scheme="http://chainchunqing.xyz/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="Hexo" scheme="http://chainchunqing.xyz/tags/Hexo/"/>
+    
+  </entry>
+  
+</feed>
