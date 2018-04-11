@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[背景美化]]></title>
+    <url>%2F2018%2F04%2F11%2F%E8%83%8C%E6%99%AF%E7%BE%8E%E5%8C%96%2F</url>
+    <content type="text"><![CDATA[页面背景美化 实现背景图更换及平铺，以及引入动态背景（可交互） 静态background设置1、打开博客根目录/themes/next/source/css/_custom/custom.styl文件，编辑如下：1234567// Custom styles.body &#123; background-image: url(/images/background.png); background-attachment: fixed; // 不随屏幕滚动而滚动 background-repeat: repeat; // 如果背景图不够屏幕大小则重复铺，改为no-repeat则表示不重复铺 background-size: contain; // 等比例铺满屏幕&#125; 2、将背景图命名为background.png并放入主题根目录/images下动态可交互背景（js引入）1、打开博客根目录/themes/next/layout/_layout.swig文件，在之前添加代码如下：1234&#123;% if theme.canvas_nest %&#125;&lt;script type=&quot;text/javascript&quot;color=&quot;0,0,255&quot; opacity=&apos;0.7&apos; zIndex=&quot;-2&quot; count=&quot;99&quot; src=&quot;//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js&quot;&gt;&lt;/script&gt;&#123;% endif %&#125; 属性说明： color ：线条颜色, 默认: ‘0,0,0’；三个数字分别为(R,G,B) opacity: 线条透明度（0~1）, 默认: 0.5 count: 线条的总数量, 默认: 150 zIndex: 背景的z-index属性，css属性用于控制所在层的位置, 默认: -1 2、打开博客根目录/themes/next/_config.yml，找到字段canvas_nest，将其置为true【如果没有找到该字段，请自行添加】3、hexo clean , hexo d -g可以看到效果~]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[美化]]></title>
+    <url>%2F2018%2F04%2F11%2F%E7%82%B9%E5%87%BB%2F</url>
+    <content type="text"><![CDATA[点击特效 实现点击出现桃心效果在网址输入如下： http://7u2ss1.com1.z0.glb.clouddn.com/love.js然后将里面的代码copy一下，新建love.js文件并且将代码复制进去，然后保存。将love.js文件放到路径/themes/next/source/js/src里面，然后打开\themes\next\layout_layout.swig文件,在末尾（在前面引用会出现找不到的bug）添加以下代码： 12&lt;!-- 页面点击小红心 --&gt;&lt;script type=&quot;text/javascript&quot; src=&quot;/js/src/love.js&quot;&gt;&lt;/script&gt;]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Markdown用法]]></title>
     <url>%2F2018%2F04%2F11%2Ftest%2F</url>
     <content type="text"><![CDATA[Markdown用法Hexo 是使用Markdown标记语言的，以前没有接触此处学习并记录。 什么是MarkdownMarkdown具有一系列衍生版本，用于扩展Markdown的功能（如表格、脚注、内嵌HTML等等），这些功能原初的Markdown尚不具备，它们能让Markdown转换成更多的格式，例如LaTeX，Docbook。Markdown增强版中比较有名的有Markdown Extra、MultiMarkdown、 Maruku等。这些衍生版本要么基于工具，如Pandoc；要么基于网站，如GitHub和Wikipedia，在语法上基本兼容，但在一些语法和渲染效果上有改动。 标题标题能显示出文章的结构。行首插入1-6个 # ，每增加一个 # 表示更深入层次的内容，对应到标题的深度由 1-6 阶。#号后面应使用空格与标题分隔H1 :# 一级标题H2 :## 二级标题H3 :### 三级标题H4 :#### 四级标题H5 :##### 五级标题H6 :###### 六级标题 文本样式带星号的文本样式，在原版Markdown标准中不存在，但在其大部分衍生标准中被添加链接 :Title加粗 :Bold斜体字 :Italics删除线 :text高亮 :==text==段落 : 段落之间空一行换行符 : 一行结束时输入两个空格 列表 :* 添加星号成为一个新的列表项。引用 : 使用说明，要结束引用需要在引用部分结束后插入一个回车 内嵌代码 : alert(&#39;Hello World&#39;);画水平线 (HR) :——–列举 整理知识，学习笔记 发布日记，杂文，所见所想 撰写发布技术文稿（代码支持） 撰写发布学术论文（LaTeX 公式支持） 插入图片 不选中的框 选中的框 书写一个质能守恒公式[^LaTeX]$E=mc^2$ 代码高亮1234567@requires_authorizationclass SomeClass: passif __name__ == '__main__': # A comment print 'hello world' 流程图12345678st=&gt;start: Startop=&gt;operation: Your Operationcond=&gt;condition: Yes or No?e=&gt;endst-&gt;op-&gt;condcond(yes)-&gt;econd(no)-&gt;op 绘制表格 左对齐 右对齐 居中 计算机 $1600 5 手机 $12 12 管线 $1 234]]></content>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://chainchunqing.xyz/"/>
-  <updated>2018-04-11T12:39:41.320Z</updated>
+  <updated>2018-04-11T13:53:18.716Z</updated>
   <id>http://chainchunqing.xyz/</id>
   
   <author>
@@ -15,6 +15,52 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>背景美化</title>
+    <link href="http://chainchunqing.xyz/2018/04/11/%E8%83%8C%E6%99%AF%E7%BE%8E%E5%8C%96/"/>
+    <id>http://chainchunqing.xyz/2018/04/11/背景美化/</id>
+    <published>2018-04-11T13:44:16.000Z</published>
+    <updated>2018-04-11T13:53:18.716Z</updated>
+    
+    <content type="html"><![CDATA[<p>页面背景美化<br>　　实现背景图更换及平铺，以及引入动态背景（可交互）<br><a id="more"></a></p><h2 id="静态background设置"><a href="#静态background设置" class="headerlink" title="静态background设置"></a>静态background设置</h2><h3 id="1、打开博客根目录-themes-next-source-css-custom-custom-styl文件，编辑如下："><a href="#1、打开博客根目录-themes-next-source-css-custom-custom-styl文件，编辑如下：" class="headerlink" title="1、打开博客根目录/themes/next/source/css/_custom/custom.styl文件，编辑如下："></a>1、打开博客根目录/themes/next/source/css/_custom/custom.styl文件，编辑如下：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// Custom styles.</span><br><span class="line">body &#123; </span><br><span class="line">background-image: url(/images/background.png);</span><br><span class="line">background-attachment: fixed; // 不随屏幕滚动而滚动</span><br><span class="line">background-repeat: repeat; // 如果背景图不够屏幕大小则重复铺，改为no-repeat则表示不重复铺</span><br><span class="line">background-size: contain; // 等比例铺满屏幕</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="2、将背景图命名为background-png并放入主题根目录-images下"><a href="#2、将背景图命名为background-png并放入主题根目录-images下" class="headerlink" title="2、将背景图命名为background.png并放入主题根目录/images下"></a>2、将背景图命名为background.png并放入主题根目录/images下</h3><h2 id="动态可交互背景（js引入）"><a href="#动态可交互背景（js引入）" class="headerlink" title="动态可交互背景（js引入）"></a>动态可交互背景（js引入）</h2><h3 id="1、打开博客根目录-themes-next-layout-layout-swig文件，在之前添加代码如下："><a href="#1、打开博客根目录-themes-next-layout-layout-swig文件，在之前添加代码如下：" class="headerlink" title="1、打开博客根目录/themes/next/layout/_layout.swig文件，在之前添加代码如下："></a>1、打开博客根目录/themes/next/layout/_layout.swig文件，在之前添加代码如下：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if theme.canvas_nest %&#125;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;</span><br><span class="line">color=&quot;0,0,255&quot; opacity=&apos;0.7&apos; zIndex=&quot;-2&quot; count=&quot;99&quot; src=&quot;//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure><p>属性说明：</p><blockquote><ul><li>color ：线条颜色, 默认: ‘0,0,0’；三个数字分别为(R,G,B)</li><li>opacity: 线条透明度（0~1）, 默认: 0.5</li><li>count: 线条的总数量, 默认: 150</li><li>zIndex: 背景的z-index属性，css属性用于控制所在层的位置, 默认: -1</li></ul></blockquote><h3 id="2、打开博客根目录-themes-next-config-yml，找到字段canvas-nest，将其置为true【如果没有找到该字段，请自行添加】"><a href="#2、打开博客根目录-themes-next-config-yml，找到字段canvas-nest，将其置为true【如果没有找到该字段，请自行添加】" class="headerlink" title="2、打开博客根目录/themes/next/_config.yml，找到字段canvas_nest，将其置为true【如果没有找到该字段，请自行添加】"></a>2、打开博客根目录/themes/next/_config.yml，找到字段canvas_nest，将其置为true【如果没有找到该字段，请自行添加】</h3><h3 id="3、hexo-clean-hexo-d-g可以看到效果"><a href="#3、hexo-clean-hexo-d-g可以看到效果" class="headerlink" title="3、hexo clean , hexo d -g可以看到效果~"></a>3、hexo clean , hexo d -g可以看到效果~</h3>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;页面背景美化&lt;br&gt;　　实现背景图更换及平铺，以及引入动态背景（可交互）&lt;br&gt;
+    
+    </summary>
+    
+      <category term="学习" scheme="http://chainchunqing.xyz/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="Hexo" scheme="http://chainchunqing.xyz/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>美化</title>
+    <link href="http://chainchunqing.xyz/2018/04/11/%E7%82%B9%E5%87%BB/"/>
+    <id>http://chainchunqing.xyz/2018/04/11/点击/</id>
+    <published>2018-04-11T13:37:08.000Z</published>
+    <updated>2018-04-11T13:42:39.566Z</updated>
+    
+    <content type="html"><![CDATA[<h3>点击特效</h3><p>实现点击出现桃心效果<br><a id="more"></a><br>在网址输入如下：</p><p><code>http://7u2ss1.com1.z0.glb.clouddn.com/love.js</code><br>然后将里面的代码copy一下，新建love.js文件并且将代码复制进去，然后保存。将love.js文件放到路径/themes/next/source/js/src里面，然后打开\themes\next\layout_layout.swig文件,在末尾（在前面引用会出现找不到的bug）添加以下代码：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 页面点击小红心 --&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;/js/src/love.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3&gt;点击特效&lt;/h3&gt;
+
+&lt;p&gt;实现点击出现桃心效果&lt;br&gt;
+    
+    </summary>
+    
+      <category term="学习" scheme="http://chainchunqing.xyz/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="Hexo" scheme="http://chainchunqing.xyz/tags/Hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>Markdown用法</title>
