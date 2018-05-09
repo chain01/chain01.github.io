@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://chainchunqing.xyz/"/>
-  <updated>2018-04-13T07:34:35.651Z</updated>
+  <updated>2018-05-09T12:36:24.150Z</updated>
   <id>http://chainchunqing.xyz/</id>
   
   <author>
@@ -15,6 +15,49 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>makefile学习</title>
+    <link href="http://chainchunqing.xyz/2018/05/09/makefile/"/>
+    <id>http://chainchunqing.xyz/2018/05/09/makefile/</id>
+    <published>2018-05-09T11:15:28.000Z</published>
+    <updated>2018-05-09T12:36:24.150Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Makeflie基本使用"><a href="#Makeflie基本使用" class="headerlink" title="Makeflie基本使用"></a>Makeflie基本使用</h1><p>makefile是Linux中的一个工具用于在一个工程中处理文件依赖，用于自动编译<br><a id="more"></a></p><h2 id="什么是makefile"><a href="#什么是makefile" class="headerlink" title="什么是makefile"></a>什么是makefile</h2><p>在软件开发中，make是一个工具程序（Utility software），经由读取叫做“makefile”的文件，自动化建构软件。它是一种转化文件形式的工具，转换的目标称为“target”；与此同时，它也检查文件的依赖关系，如果需要的话，它会调用一些外部软件来完成任务。它的依赖关系检查系统非常简单，主要根据依赖文件的修改时间进行判断。大多数情况下，它被用来编译源代码，生成结果代码，然后把结果代码连接起来生成可执行文件或者库文件。它使用叫做“makefile”的文件来确定一个target文件的依赖关系，然后把生成这个target的相关命令传给shell去执行。</p><h2 id="基本语句"><a href="#基本语句" class="headerlink" title="基本语句"></a>基本语句</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">target（要生成的文件）: dependencies（被依赖的文件）</span><br><span class="line">        命令1</span><br><span class="line">        命令2</span><br><span class="line">        命令3</span><br><span class="line">命令前面用的是“tab”而非空格。误用空格是初学者容易犯的错误！</span><br><span class="line">命令可以是任何一个shell能运行的命令。</span><br><span class="line">          .</span><br><span class="line">          .</span><br><span class="line">        命令n</span><br><span class="line">可以使用“\”表示续行。注意，“\”之后不能有空格！</span><br></pre></td></tr></table></figure><p>make会比较targets文件和prerequisites文件的修改日期，如果prerequisites文件的日期要比targets文件的日期要新，或者target不存在的话，那么，make就会执行后续定义的命令。</p><h2 id="简单的实例"><a href="#简单的实例" class="headerlink" title="简单的实例"></a>简单的实例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">print.h</span><br><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">void printhello();</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">print.c</span><br><span class="line">#include&quot;print.h&quot;</span><br><span class="line">void printhello()&#123;</span><br><span class="line">printf(&quot;Hello World\n&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">main.c</span><br><span class="line">#include&quot;print.h&quot;</span><br><span class="line">int main()&#123;</span><br><span class="line">printhello();</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">makefile</span><br><span class="line">helloworld : main.o print.o</span><br><span class="line">gcc -o helloworld main.o print.o</span><br><span class="line"></span><br><span class="line">mian.o : main.c print.h</span><br><span class="line">gcc -c main.c</span><br><span class="line"></span><br><span class="line">print.o : print.c print.h</span><br><span class="line">gcc -c print.c</span><br><span class="line"></span><br><span class="line">clean :</span><br><span class="line">rm helloworld main.o print.o</span><br></pre></td></tr></table></figure><p>用变量替代<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">ojb=main.o print.o</span><br><span class="line">helloworld : $(ojb)</span><br><span class="line">gcc -o helloworld $(ojb)</span><br><span class="line"></span><br><span class="line">mian.o : main.c print.h</span><br><span class="line">gcc -c main.c</span><br><span class="line"></span><br><span class="line">print.o : print.c print.h</span><br><span class="line">gcc -c print.c</span><br><span class="line"></span><br><span class="line">clean :</span><br><span class="line">rm helloworld $(ojb)</span><br></pre></td></tr></table></figure></p><p>由make自己推导命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ojb=main.o print.o</span><br><span class="line">helloworld : $(ojb)</span><br><span class="line">gcc -o helloworld $(ojb)</span><br><span class="line"></span><br><span class="line">mian.o : main.c print.h</span><br><span class="line">print.o : print.c print.h</span><br><span class="line">clean :</span><br><span class="line">rm helloworld $(ojb)</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Makeflie基本使用&quot;&gt;&lt;a href=&quot;#Makeflie基本使用&quot; class=&quot;headerlink&quot; title=&quot;Makeflie基本使用&quot;&gt;&lt;/a&gt;Makeflie基本使用&lt;/h1&gt;&lt;p&gt;makefile是Linux中的一个工具用于在一个工程中处理文件依赖，用于自动编译&lt;br&gt;
+    
+    </summary>
+    
+      <category term="学习" scheme="http://chainchunqing.xyz/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="Linux" scheme="http://chainchunqing.xyz/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>c语言</title>
+    <link href="http://chainchunqing.xyz/2018/05/04/c%E8%AF%AD%E8%A8%80/"/>
+    <id>http://chainchunqing.xyz/2018/05/04/c语言/</id>
+    <published>2018-05-04T10:59:07.000Z</published>
+    <updated>2018-05-04T11:05:17.029Z</updated>
+    
+    <content type="html"><![CDATA[<p>vs中 未初始化的变量的值 0Xcc -858993460 烫”：<br>关键词：vs 中 未 初始化 变量 值 0xcc 858993460 烫<br>vc的debug版会把未初始化的指针自动初始化为0xcccccccc，而不是就让它随机去，那是因为debug版的目的是为了方便我们调试程序的，如果野指针的初值不确定，那么每次调试同一个程序就可能出现不一样的结果，比如这次程序崩掉，下次正常运行，再一次虽然没崩掉，但结果不对……那显然对我们解bug是非常不利的。</p><p>__asm{int 3}的一个用处是在exe中可中断，产生调试。int 3 相当于 debugbreak， 机器码就是cc。</p><p>当一个未初始化赋值的时候(至少是vc 下未初始化的内存)默认是0xcccccccc;，他在内存就默认保存为-858993460 即二进制的11001100 11001100 11001100 11001100； 十六进制的cccccccc;而汉字 “烫” 的编码恰好就是1100110011001100:</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;vs中 未初始化的变量的值 0Xcc -858993460 烫”：&lt;br&gt;关键词：vs 中 未 初始化 变量 值 0xcc 858993460 烫&lt;br&gt;vc的debug版会把未初始化的指针自动初始化为0xcccccccc，而不是就让它随机去，那是因为debug版的目的是为
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>常用 Git 命令清单</title>
