@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[php字符串操作]]></title>
+    <url>%2F2018%2F05%2F14%2Fphp%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C%2F</url>
+    <content type="text"><![CDATA[这篇文章主要介绍了php中利用explode函数分割字符串到数组分割字符串 //利用 explode 函数分割字符串到数组代码如下: 12345678$source = &quot;hello1,hello2,hello3,hello4,hello5&quot;;//按逗号分离字符串 $hello = explode(&apos;,&apos;,$source); for($index=0;$index&lt;count($hello);$index++) &#123; echo $hello[$index];echo &quot;&lt;/br&gt;&quot;; &#125; ?&gt; //split函数进行字符分割// 分隔符可以是斜线，点，或横线代码如下:12345&lt;?php $date = &quot;04/30/1973&quot;; list($month, $day, $year) = split (&apos;[/.-]&apos;, $date); echo &quot;Month: $month; Day: $day; Year: $year&lt;br /&gt;\n&quot;; ?&gt; 通过数组实现多条件查询的代码 代码如下:12345678910&lt;?php$keyword=&quot;asp php,jsp&quot;;$keyword=str_replace(&quot; &quot;,&quot; &quot;,$keyword);$keyword=str_replace(&quot; &quot;,&quot;,&quot;,$keyword);$keyarr=explode(&apos;,&apos;,$keyword); for($index=0;$index&lt;count($keyarr);$index++) &#123; $whereSql .= &quot; And (arc.title like &apos;%$keyarr[$index]%&apos; Or arc.keywords like &apos;%$keyarr[$index]%&apos;) &quot;;&#125; echo $whereSql;]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>php</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[makefile学习]]></title>
     <url>%2F2018%2F05%2F09%2Fmakefile%2F</url>
     <content type="text"><![CDATA[Makeflie基本使用makefile是Linux中的一个工具用于在一个工程中处理文件依赖，用于自动编译 什么是makefile在软件开发中，make是一个工具程序（Utility software），经由读取叫做“makefile”的文件，自动化建构软件。它是一种转化文件形式的工具，转换的目标称为“target”；与此同时，它也检查文件的依赖关系，如果需要的话，它会调用一些外部软件来完成任务。它的依赖关系检查系统非常简单，主要根据依赖文件的修改时间进行判断。大多数情况下，它被用来编译源代码，生成结果代码，然后把结果代码连接起来生成可执行文件或者库文件。它使用叫做“makefile”的文件来确定一个target文件的依赖关系，然后把生成这个target的相关命令传给shell去执行。 基本语句12345678910target（要生成的文件）: dependencies（被依赖的文件） 命令1 命令2 命令3 命令前面用的是“tab”而非空格。误用空格是初学者容易犯的错误！ 命令可以是任何一个shell能运行的命令。 . . 命令n可以使用“\”表示续行。注意，“\”之后不能有空格！ make会比较targets文件和prerequisites文件的修改日期，如果prerequisites文件的日期要比targets文件的日期要新，或者target不存在的话，那么，make就会执行后续定义的命令。 简单的实例123print.h#include&lt;stdio.h&gt;void printhello(); 12345print.c#include&quot;print.h&quot;void printhello()&#123; printf(&quot;Hello World\n&quot;);&#125; 123456main.c#include&quot;print.h&quot;int main()&#123; printhello(); return 0;&#125; 123456789101112makefilehelloworld : main.o print.o gcc -o helloworld main.o print.omian.o : main.c print.h gcc -c main.cprint.o : print.c print.h gcc -c print.cclean : rm helloworld main.o print.o 用变量替代123456789101112ojb=main.o print.ohelloworld : $(ojb) gcc -o helloworld $(ojb)mian.o : main.c print.h gcc -c main.cprint.o : print.c print.h gcc -c print.cclean : rm helloworld $(ojb) 由make自己推导命令12345678ojb=main.o print.ohelloworld : $(ojb) gcc -o helloworld $(ojb)mian.o : main.c print.hprint.o : print.c print.hclean : rm helloworld $(ojb)]]></content>

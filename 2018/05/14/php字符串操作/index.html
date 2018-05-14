@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="php," />
 
 
 
@@ -81,17 +81,18 @@
 
 
 
-<meta name="description" content="神奇海螺 - 为什么不问问神奇海螺呢？    body,h1,form{ 	margin:0; } html{ 	font:1em &quot;BlinkMacSystemFont&quot;,&quot;Microsoft YaHei&quot;,&quot;微软雅黑&quot;,&quot;WenQuanYi Micro Hei&quot;,sans-serif; 	text-align:center; } input{ 	font:inherit; } input:">
-<meta property="og:type" content="website">
-<meta property="og:title" content="创之">
-<meta property="og:url" content="http://chainchunqing.xyz/html/index.html">
+<meta name="description" content="这篇文章主要介绍了php中利用explode函数分割字符串到数组分割字符串  //利用 explode 函数分割字符串到数组代码如下: 12345678$source = &amp;quot;hello1,hello2,hello3,hello4,hello5&amp;quot;;//按逗号分离字符串 $hello = explode(&amp;apos;,&amp;apos;,$source); for($index=0;$i">
+<meta name="keywords" content="php">
+<meta property="og:type" content="article">
+<meta property="og:title" content="php字符串操作">
+<meta property="og:url" content="http://chainchunqing.xyz/2018/05/14/php字符串操作/index.html">
 <meta property="og:site_name" content="创之">
-<meta property="og:description" content="神奇海螺 - 为什么不问问神奇海螺呢？    body,h1,form{ 	margin:0; } html{ 	font:1em &quot;BlinkMacSystemFont&quot;,&quot;Microsoft YaHei&quot;,&quot;微软雅黑&quot;,&quot;WenQuanYi Micro Hei&quot;,sans-serif; 	text-align:center; } input{ 	font:inherit; } input:">
+<meta property="og:description" content="这篇文章主要介绍了php中利用explode函数分割字符串到数组分割字符串  //利用 explode 函数分割字符串到数组代码如下: 12345678$source = &amp;quot;hello1,hello2,hello3,hello4,hello5&amp;quot;;//按逗号分离字符串 $hello = explode(&amp;apos;,&amp;apos;,$source); for($index=0;$i">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-15T13:37:40.856Z">
+<meta property="og:updated_time" content="2018-05-14T13:47:58.637Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="创之">
-<meta name="twitter:description" content="神奇海螺 - 为什么不问问神奇海螺呢？    body,h1,form{ 	margin:0; } html{ 	font:1em &quot;BlinkMacSystemFont&quot;,&quot;Microsoft YaHei&quot;,&quot;微软雅黑&quot;,&quot;WenQuanYi Micro Hei&quot;,sans-serif; 	text-align:center; } input{ 	font:inherit; } input:">
+<meta name="twitter:title" content="php字符串操作">
+<meta name="twitter:description" content="这篇文章主要介绍了php中利用explode函数分割字符串到数组分割字符串  //利用 explode 函数分割字符串到数组代码如下: 12345678$source = &amp;quot;hello1,hello2,hello3,hello4,hello5&amp;quot;;//按逗号分离字符串 $hello = explode(&amp;apos;,&amp;apos;,$source); for($index=0;$i">
 
 
 
@@ -121,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://chainchunqing.xyz/html/"/>
+  <link rel="canonical" href="http://chainchunqing.xyz/2018/05/14/php字符串操作/"/>
 
 
 
 
 
-  <title> | 创之</title>
+  <title>php字符串操作 | 创之</title>
   
 
 
@@ -299,440 +300,212 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://chainchunqing.xyz/2018/05/14/php字符串操作/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="如果能编程回忆">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="创之">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline"></h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <!DOCTYPE html>
-<meta charset="UTF-8">
-<title>神奇海螺 - 为什么不问问神奇海螺呢？</title>
-
-<meta name="viewport" content="width=device-width,user-scalable=no">
-<style>
-body,h1,form{
-	margin:0;
-}
-html{
-	font:1em "BlinkMacSystemFont","Microsoft YaHei","微软雅黑","WenQuanYi Micro Hei",sans-serif;
-	text-align:center;
-}
-input{
-	font:inherit;
-}
-input:focus{
-	outline:none;
-}
-::selection{
-	background:rgba(0,149,255,0.1);
-}
-a{
-	text-decoration:none;
-	color:#58a4dd;
-}
-h1{
-	font-size:3.5em;
-	padding:1.5em 0;
-	color:#0bb1f5;
-	font-weight:200;
-}
-h1:before{
-	content:'🐚 ';
-}
-#输入框 input{
-	ime-mode:inactive;
-	ime-mode:disabled;
-
-	border:none;
-	
-	font-size:1.4em;
-	padding:.5em .7em;
-	max-width:30em;
-	width:100%;
-	background:#F8F8F8;
-	
-	box-shadow:
-		0 0 0 1px #DDD inset,
-		0 1px 2px rgba(0,0,0,.2);
-	
-	transition: box-shadow .3s ease;
-
-	border-radius:4px;
-
-	text-align:center;
-	-webkit-appearance:none;
-
-}
-#输入框 input:focus{
-	box-shadow:
-		0 0 0 2px #58a4dd inset,
-		0 3px 3px rgba(0,0,0,.2) inset;
-}
-#结果{
-	padding:2em 0;
-}
-#结果 a{
-	display:block;
-	padding:.5em;
-	font-size:1.4em;
-}
-#结果 a:hover{
-	background:rgba(88,164,221,.1);
-}
-.text-banner{
-	font-size:1.4em;
-	line-height:4em;
-	color:#DDD;
-}
-footer{
-	font-size:1.4em;
-	line-height:6em;
-	color:#DDD;
-}
-
-@media (max-width:600px) {
-	h1{
-		padding:.5em 0;
-	}
-	h1:before{
-		display:none;
-	}
-	#输入框{
-		padding:0 1em;
-	}
-}
-</style>
-
-
-<h1>神奇海螺</h1>
-<form id="输入框" autocomplete="off">
-	<input type="search" name="text" placeholder="键入关键字、回车直达">
-</form>
-<div id="结果"></div>
-
-<footer>
-	为什么不问问神奇海螺呢？
-</footer>
-
-
-<script>
-// https://github.com/jordanthomas/jaro-winkler/
-(function (root) {
-  'use strict';
-
-  function extend(a, b) {
-    for (var property in b) {
-      if (b.hasOwnProperty(property)) {
-        a[property] = b[property];
-      }
-    }
-
-    return a;
-  }
-
-  function distance(s1, s2, options) {
-    var m = 0;
-    var defaults = { caseSensitive: true };
-    var settings = extend(defaults, options);
-    var i;
-    var j;
-
-    // Exit early if either are empty.
-    if (s1.length === 0 || s2.length === 0) {
-      return 0;
-    }
-
-    // Convert to upper if case-sensitive is false.
-    if (!settings.caseSensitive) {
-      s1 = s1.toUpperCase();
-      s2 = s2.toUpperCase();
-    }
-
-    // Exit early if they're an exact match.
-    if (s1 === s2) {
-      return 1;
-    }
-
-    var range = (Math.floor(Math.max(s1.length, s2.length) / 2)) - 1;
-    var s1Matches = new Array(s1.length);
-    var s2Matches = new Array(s2.length);
-
-    for (i = 0; i < s1.length; i++) {
-      var low  = (i >= range) ? i - range : 0;
-      var high = (i + range <= (s2.length - 1)) ? (i + range) : (s2.length - 1);
-
-      for (j = low; j <= high; j++) {
-        if (s1Matches[i] !== true && s2Matches[j] !== true && s1[i] === s2[j]) {
-          ++m;
-          s1Matches[i] = s2Matches[j] = true;
-          break;
-        }
-      }
-    }
-
-    // Exit early if no matches were found.
-    if (m === 0) {
-      return 0;
-    }
-
-    // Count the transpositions.
-    var k = 0;
-    var numTrans = 0;
-
-    for (i = 0; i < s1.length; i++) {
-      if (s1Matches[i] === true) {
-        for (j = k; j < s2.length; j++) {
-          if (s2Matches[j] === true) {
-            k = j + 1;
-            break;
-          }
-        }
-
-        if (s1[i] !== s2[j]) {
-          ++numTrans;
-        }
-      }
-    }
-
-    var weight = (m / s1.length + m / s2.length + (m - (numTrans / 2)) / m) / 3;
-    var l = 0;
-    var p = 0.1;
-
-    if (weight > 0.7) {
-      while (s1[l] === s2[l] && l < 4) {
-        ++l;
-      }
-
-      weight = weight + l * p * (1 - weight);
-    }
-
-    return weight;
-  }
-
-  if (typeof define === 'function' && define.amd) {
-    define([], function() {return distance});
-  } else if (typeof exports === 'object') {
-    module.exports = distance;
-  } else {
-    root.distance = distance;
-  }
-})(this);
-</script>
-
-
-<script>
-
-var 
-sites={};
-
-
-var 
-x=new XMLHttpRequest();
-
-x.open('GET','sites.json',1);
-
-x.onload=function(r){
-	r=JSON.parse(x.response);
-
-	for(var domain in r){
-
-		r[domain].domain=r[domain].href.
-			replace(/^https?:\/\//,'').
-			replace(/^www\./,'').
-			replace(/\/.*$/,'');
-
-		sites[domain+' '+r[domain].title]=r[domain];
-	}
-}
-
-x.send();
-
-
-var 
-判断重复=function(arr,o){
-	for(var i=0,l=arr.length;i<l;i++){
-		if(arr[i].domain==o.domain){
-			return true;
-		}
-	}
-
-	return false;
-},
-最近输入结果=[],
-历史跳转结果数量=5,
-展示最近输入的关键字=function(){
-	结果.innerHTML=列表转换(最近输入结果);
-},
-列表转换=function(r){
-	return r.map(function(o){
-		return '<a href="'+(o.href.match(/^http/)?'':'http://')+o.href+'">'+o.domain+' - '+o.title+'</a>';
-	}).join('');
-},
-最终展示地址列表=[],
-最终展示地址列表最大数量限制=30,
-根据关键字搜索并展示=function(text){
-
-	var 
-	中文模式=!!text.match(/[一-龥]/);
-
-	// console.log(sites);
-
-	最终展示地址列表=[];
-
-	for(var domain in sites){
-		// if(domain.search(text)!=-1){
-			sites[domain].顺序=distance(中文模式?sites[domain].title:domain,text);//+distance(sites[domain].title,text);
-			最终展示地址列表.push(sites[domain]);
-		// }
-	}
-
-	最终展示地址列表.sort(function(a,b){
-		return b.顺序-a.顺序;
-	});
-
-
-	if(最终展示地址列表.length>最终展示地址列表最大数量限制)
-		最终展示地址列表.length=最终展示地址列表最大数量限制;
-
-	结果.innerHTML=列表转换(最终展示地址列表);
-};
-
-输入框.onsubmit=function(e){
-	if(e)
-		e.preventDefault();
-
-	var 
-	text=输入框.text.value.trim();
-	text=text.toLowerCase();
-
-
-
-	if(text.match(/^https?:/)){
-		location.href=text;
-		return;
-	}
-
-	if(!text.match(/:/) && text.match(/^(www|blog|bbs)|\.(com|net|org)$/)){
-		location.href='http://'+text;
-		//location.href='https://www.google.com/search?safe=strict&site=&source=hp&q='+encodeURIComponent(text)+'&btnI=%C2%A0手气不错%C2%A0';
-		return;
-	}
-
-
-	根据关键字搜索并展示(text);
-
-	var 
-	a=结果.querySelector('a');
-	if(a){
-
-
-
-		if(最终展示地址列表[0] && !判断重复(最近输入结果,最终展示地址列表[0])){
-
-
-
-
-			最近输入结果.unshift(最终展示地址列表[0]);
-
-			if(最近输入结果.length>历史跳转结果数量){
-				最近输入结果.length=历史跳转结果数量;
-			}
-
-			if(window.localStorage){
-				localStorage.历史搜索=JSON.stringify(最近输入结果);
-			}
-		}
-		
-
-		location.href=a.href;
-	}
-};
-
-
-
-
-try{
-	最近输入结果=JSON.parse(localStorage.历史搜索);
-}catch(e){
-	最近输入结果=[];
-}
-
-
-
-展示最近输入的关键字();
-
-输入框.text.oninput=function(){
-	var 
-	text=输入框.text.value.trim();//.match(/^\w+$/);
-	text=text.toLowerCase();
-
-
-	clearTimeout(结果.T);
-
-
-	if(!text){
-		展示最近输入的关键字();
-		return;
-	}
-
-
-
-	结果.T=setTimeout(function(){
-
-
-		根据关键字搜索并展示(text);
-	},20);
-
-}
-
-输入框.text.focus();
-
-
-document.body.onclick=function(e){
-	var 
-	target=e.target,
-	action=target.getAttribute('action');
-
-
-	switch(action){
-		case '搜索':
-
-			var 
-			text=target.innerHTML;
-
-			输入框.text.focus();
-			输入框.text.value=text;
-			输入框.text.oninput();
-			break;
-	}
-}
-
-
-console.log('神奇海螺 https://chain01.github.io/m');
-console.log('网址提交 https://github.com/chain01/');
-
-</script>
+          <h1 class="post-title" itemprop="name headline">php字符串操作</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-14T21:46:01+08:00">
+                2018-05-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习/" itemprop="url" rel="index">
+                    <span itemprop="name">学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/05/14/php字符串操作/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/14/php字符串操作/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  196
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p>这篇文章主要介绍了php中利用explode函数分割字符串到数组<br>分割字符串 </p>
+<p>//利用 explode 函数分割字符串到数组<br>代码如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$source = &quot;hello1,hello2,hello3,hello4,hello5&quot;;//按逗号分离字符串 </span><br><span class="line">$hello = explode(&apos;,&apos;,$source); </span><br><span class="line"></span><br><span class="line">for($index=0;$index&lt;count($hello);$index++) </span><br><span class="line">&#123; </span><br><span class="line">echo $hello[$index];echo &quot;&lt;/br&gt;&quot;; </span><br><span class="line">&#125; </span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<p>//split函数进行字符分割<br>// 分隔符可以是斜线，点，或横线<br>代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php </span><br><span class="line">$date = &quot;04/30/1973&quot;; </span><br><span class="line">list($month, $day, $year) = split (&apos;[/.-]&apos;, $date); </span><br><span class="line">echo &quot;Month: $month; Day: $day; Year: $year&lt;br /&gt;\n&quot;; </span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure></p>
+<p>通过数组实现多条件查询的代码</p>
+<p>代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$keyword=&quot;asp php,jsp&quot;;</span><br><span class="line">$keyword=str_replace(&quot;  &quot;,&quot; &quot;,$keyword);</span><br><span class="line">$keyword=str_replace(&quot; &quot;,&quot;,&quot;,$keyword);</span><br><span class="line">$keyarr=explode(&apos;,&apos;,$keyword); </span><br><span class="line">for($index=0;$index&lt;count($keyarr);$index++) </span><br><span class="line">&#123; </span><br><span class="line">$whereSql .= &quot; And (arc.title like &apos;%$keyarr[$index]%&apos; Or arc.keywords like &apos;%$keyarr[$index]%&apos;) &quot;;</span><br><span class="line">&#125; </span><br><span class="line">echo $whereSql;</span><br></pre></td></tr></table></figure></p>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/php/" <i class="fa fa-tag"></i> php</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/09/makefile/" rel="next" title="makefile学习">
+                <i class="fa fa-chevron-left"></i> makefile学习
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -768,17 +541,8 @@ console.log('网址提交 https://github.com/chain01/');
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -859,23 +623,6 @@ console.log('网址提交 https://github.com/chain01/');
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">神奇海螺</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-		
-      <!--/noindex-->
       
 
       

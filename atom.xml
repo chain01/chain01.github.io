@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://chainchunqing.xyz/"/>
-  <updated>2018-05-09T12:36:24.150Z</updated>
+  <updated>2018-05-14T13:47:58.637Z</updated>
   <id>http://chainchunqing.xyz/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>php字符串操作</title>
+    <link href="http://chainchunqing.xyz/2018/05/14/php%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C/"/>
+    <id>http://chainchunqing.xyz/2018/05/14/php字符串操作/</id>
+    <published>2018-05-14T13:46:01.000Z</published>
+    <updated>2018-05-14T13:47:58.637Z</updated>
+    
+    <content type="html"><![CDATA[<p>这篇文章主要介绍了php中利用explode函数分割字符串到数组<br>分割字符串 </p><p>//利用 explode 函数分割字符串到数组<br>代码如下:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$source = &quot;hello1,hello2,hello3,hello4,hello5&quot;;//按逗号分离字符串 </span><br><span class="line">$hello = explode(&apos;,&apos;,$source); </span><br><span class="line"></span><br><span class="line">for($index=0;$index&lt;count($hello);$index++) </span><br><span class="line">&#123; </span><br><span class="line">echo $hello[$index];echo &quot;&lt;/br&gt;&quot;; </span><br><span class="line">&#125; </span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure><p>//split函数进行字符分割<br>// 分隔符可以是斜线，点，或横线<br>代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php </span><br><span class="line">$date = &quot;04/30/1973&quot;; </span><br><span class="line">list($month, $day, $year) = split (&apos;[/.-]&apos;, $date); </span><br><span class="line">echo &quot;Month: $month; Day: $day; Year: $year&lt;br /&gt;\n&quot;; </span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure></p><p>通过数组实现多条件查询的代码</p><p>代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$keyword=&quot;asp php,jsp&quot;;</span><br><span class="line">$keyword=str_replace(&quot;  &quot;,&quot; &quot;,$keyword);</span><br><span class="line">$keyword=str_replace(&quot; &quot;,&quot;,&quot;,$keyword);</span><br><span class="line">$keyarr=explode(&apos;,&apos;,$keyword); </span><br><span class="line">for($index=0;$index&lt;count($keyarr);$index++) </span><br><span class="line">&#123; </span><br><span class="line">$whereSql .= &quot; And (arc.title like &apos;%$keyarr[$index]%&apos; Or arc.keywords like &apos;%$keyarr[$index]%&apos;) &quot;;</span><br><span class="line">&#125; </span><br><span class="line">echo $whereSql;</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;这篇文章主要介绍了php中利用explode函数分割字符串到数组&lt;br&gt;分割字符串 &lt;/p&gt;
+&lt;p&gt;//利用 explode 函数分割字符串到数组&lt;br&gt;代码如下:&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td cla
+      
+    
+    </summary>
+    
+      <category term="学习" scheme="http://chainchunqing.xyz/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="php" scheme="http://chainchunqing.xyz/tags/php/"/>
+    
+  </entry>
   
   <entry>
     <title>makefile学习</title>
