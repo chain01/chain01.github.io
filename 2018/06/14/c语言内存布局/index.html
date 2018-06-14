@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo," />
+  <meta name="keywords" content="C语言," />
 
 
 
@@ -81,18 +81,21 @@
 
 
 
-<meta name="description" content="点击特效  实现点击出现桃心效果">
-<meta name="keywords" content="Hexo">
+<meta name="description" content="在Linux系统下一个c语言进程的内存布局">
+<meta name="keywords" content="C语言">
 <meta property="og:type" content="article">
-<meta property="og:title" content="美化">
-<meta property="og:url" content="http://chainchunqing.xyz/2018/04/11/点击/index.html">
+<meta property="og:title" content="c语言内存布局">
+<meta property="og:url" content="http://chainchunqing.xyz/2018/06/14/c语言内存布局/index.html">
 <meta property="og:site_name" content="创之">
-<meta property="og:description" content="点击特效  实现点击出现桃心效果">
+<meta property="og:description" content="在Linux系统下一个c语言进程的内存布局">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-11T13:42:39.566Z">
+<meta property="og:image" content="https://pic002.cnblogs.com/images/2012/401629/2012081223261220.jpg">
+<meta property="og:image" content="https://pic002.cnblogs.com/images/2012/401629/2012081300202766.jpg">
+<meta property="og:updated_time" content="2018-06-14T12:47:37.808Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="美化">
-<meta name="twitter:description" content="点击特效  实现点击出现桃心效果">
+<meta name="twitter:title" content="c语言内存布局">
+<meta name="twitter:description" content="在Linux系统下一个c语言进程的内存布局">
+<meta name="twitter:image" content="https://pic002.cnblogs.com/images/2012/401629/2012081223261220.jpg">
 
 
 
@@ -122,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://chainchunqing.xyz/2018/04/11/点击/"/>
+  <link rel="canonical" href="http://chainchunqing.xyz/2018/06/14/c语言内存布局/"/>
 
 
 
 
 
-  <title>美化 | 创之</title>
+  <title>c语言内存布局 | 创之</title>
   
 
 
@@ -312,7 +315,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://chainchunqing.xyz/2018/04/11/点击/">
+    <link itemprop="mainEntityOfPage" href="http://chainchunqing.xyz/2018/06/14/c语言内存布局/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="如果能编程回忆">
@@ -329,7 +332,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">美化</h1>
+          <h1 class="post-title" itemprop="name headline">c语言内存布局</h1>
         
 
         <div class="post-meta">
@@ -341,8 +344,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-11T21:37:08+08:00">
-                2018-04-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-14T20:38:29+08:00">
+                2018-06-14
               </time>
             
 
@@ -382,8 +385,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/04/11/点击/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/11/点击/" itemprop="commentCount"></span>
+                <a href="/2018/06/14/c语言内存布局/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/06/14/c语言内存布局/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -405,7 +408,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  127
+                  944
                 </span>
               
 
@@ -421,7 +424,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  4
                 </span>
               
             </div>
@@ -442,11 +445,9 @@
       
 
       
-        <h3>点击特效</h3>
-
-<p>实现点击出现桃心效果<br><a id="more"></a><br>在网址输入如下：</p>
-<p><code>http://7u2ss1.com1.z0.glb.clouddn.com/love.js</code><br>然后将里面的代码copy一下，新建love.js文件并且将代码复制进去，然后保存。将love.js文件放到路径/themes/next/source/js/src里面，然后打开\themes\next\layout_layout.swig文件,在末尾（在前面引用会出现找不到的bug）添加以下代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 页面点击小红心 --&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;/js/src/love.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+        <p>在Linux系统下一个c语言进程的内存布局<br><a id="more"></a></p>
+<h2 id="Linux平台下的虚拟内存管理"><a href="#Linux平台下的虚拟内存管理" class="headerlink" title="Linux平台下的虚拟内存管理"></a>Linux平台下的虚拟内存管理</h2><p>写C程序时,我们经常会打印一个指针地址,说这个指针指向某某内存地址.可这些地址是真实物理内存地址吗?不是!这些只是虚拟内存地址.<br>当一个C程序调入内存开始执行后,在内存中就会产生一个进程.而在多任务操作系统中每个进程都拥有一片属于自己的内存空间(内存沙盘),这个沙盘就是虚拟地址空间,在32位下是一个4GB的大小的地址块,这些虚拟地址通过页表映射到物理内存.<br>但系统并不会真的一下分配给每一个进程4GB的物理内存空间的映射=  =(不现实啊),这4GB只能是说逻辑地址,它会随着进程的真实需要自动扩展映射到物理内存空间,最大到4GB.<br>4GB(地址0-0xFFFFFFFF)其中1GB必须保留给系统内核(这是Linux平台下),也就是说进程自身只能拥有3GB的地址(0-0xC0000000),如图<br><img src="https://pic002.cnblogs.com/images/2012/401629/2012081223261220.jpg" alt="cmd-markdown-logo"><br>代码区:程序(函数)代码所在,由编译而得到的二进制代码被载入至此.代码区是只读的!有执行权限.代码区一般都从0x08048000地址开始(linux下).值得注意的是,字符串字面值(如”Hello World”)就存储在这个区.<br>数据段和BSS段:合称静态区(全局区),用来存储静态(全局)变量.区别是 前者(数据段)存储的是已初始化的静态(全局)变量,可读写.<br>后者(BSS段)存储的是未初始化的静态(全局)变量,可读写.<br>堆:自由存储区.不像全局变量和局部变量的生命周期被严格定义,堆区的内存分配和释放是由程序员所控制的.申请方式:C中是malloc函数,C++中是new标识符.<br>栈:由系统自动分配和释放.存储局部(自动)变量. 一般说的堆栈,其实是指 栈!<br>另外,值得注意的是,堆是由低地址向高地址分配空间;栈却是由高地址向低地址分配空间.<br>下面这段代码进一步说明C程序中各数据的内存布局:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;stdlib.h&gt;</span><br><span class="line">int i1 = 10; //静态全局区(data段)</span><br><span class="line">int i2; //静态全局区(bss段)</span><br><span class="line">static int i3 = 30; //静态全局区(data段)</span><br><span class="line">const int i4 = 40;  //代码区!!!</span><br><span class="line">void fun(int i5) //栈区</span><br><span class="line">&#123;</span><br><span class="line">    int i6 = 60; //栈区</span><br><span class="line">    static int i7 = 70; //静态全局区(data段)</span><br><span class="line">    const int i8 = 80; //栈区!!!</span><br><span class="line">    char* str1 = &quot;ABCDE&quot;; //代码区(字符串常量)</span><br><span class="line">    char str2[] = &quot;ABCDE&quot;; //栈区(字符数组)</span><br><span class="line">    int* pi = malloc(sizeof(int)); //堆区</span><br><span class="line">    printf(&quot;&amp;i5=%p\n&quot;, &amp;i5);</span><br><span class="line">    printf(&quot;&amp;i6=%p\n&quot;, &amp;i6);</span><br><span class="line">    printf(&quot;&amp;i7=%p\n&quot;, &amp;i7);</span><br><span class="line">    printf(&quot;&amp;i8=%p\n&quot;, &amp;i8);</span><br><span class="line">    printf(&quot;str1=%p\n&quot;, str1);</span><br><span class="line">    printf(&quot;str2=%p\n&quot;, str2);</span><br><span class="line">    printf(&quot;pi=%p\n&quot;, pi);</span><br><span class="line">    free(pi);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main(void)</span><br><span class="line">&#123;</span><br><span class="line">    printf(&quot;&amp;i1=%p\n&quot;, &amp;i1);</span><br><span class="line">    printf(&quot;&amp;i2=%p\n&quot;, &amp;i2);</span><br><span class="line">    printf(&quot;&amp;i3=%p\n&quot;, &amp;i3);</span><br><span class="line">    printf(&quot;&amp;i4=%p\n&quot;, &amp;i4);</span><br><span class="line">    fun(50);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>程序输出:<br><img src="https://pic002.cnblogs.com/images/2012/401629/2012081300202766.jpg" alt="cmd-markdown-logo"><br>至此,从地址大小比较可以看出<br>1)静态(static)全局变量 和 静态(static)局部变量 都在 静态全局区.<br>2)全局常量i4保存在代码区,而局部常量i8保存在栈区.<br>所以最上面的问题是,代码区只读,修改全局常量会引发运行时段错误,而局部常量是可以成功赋值修改的.<br>3)字符串字面值在代码区(所以不可修改),但是字符指针str1在栈区;字符数组str2在栈区(所以可以修改).</p>
 
       
     </div>
@@ -464,7 +465,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Hexo/" <i class="fa fa-tag"></i> Hexo</a>
+            <a href="/tags/C语言/" <i class="fa fa-tag"></i> C语言</a>
           
         </div>
       
@@ -477,8 +478,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/11/test/" rel="next" title="Markdown用法">
-                <i class="fa fa-chevron-left"></i> Markdown用法
+              <a href="/2018/05/28/fayin/" rel="next" title="常见单词发音">
+                <i class="fa fa-chevron-left"></i> 常见单词发音
               </a>
             
           </div>
@@ -486,10 +487,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/11/背景美化/" rel="prev" title="背景美化">
-                背景美化 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -645,7 +642,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">点击特效</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux平台下的虚拟内存管理"><span class="nav-number">1.</span> <span class="nav-text">Linux平台下的虚拟内存管理</span></a></li></ol></div>
             
 
           </div>
